@@ -13,17 +13,19 @@ class PersonSwift: NSObject {
 
     override init() {
         
-        PersonSwift.fooPersonMessage("Swift class says 'Hi to Swift'")
+        super.init()
         
+        //Instance swift method.
+        self.fooPersonMessage("Swift class says 'Hi to Swift'");
+        
+        //Objective C Class method.
         PersonObjc.fooMessage("Swift class says 'Hi to objective C' ");
         
     }
     
-    static func fooPersonMessage(message:NSString) {
+    internal func fooPersonMessage(message:NSString) {
         
         NSLog("%@ \n", message);
     }
-   
-
     
 }

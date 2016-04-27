@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "swiftbridge-Swift.h"
+#import "swiftbridge-Swift.h" //Hidden
 #import "PersonObjc.h"
 
 @interface ViewController ()
@@ -18,13 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    PersonSwift * ps = [[PersonSwift alloc] init];
-    
+  
+    //Calling Objective-C Class method
     [PersonObjc fooMessage:@"ViewController says 'Hi to Objective C' "];
     
-    [PersonSwift fooPersonMessage:@"ViewController says 'Hi to Swift' "];
+    //Calling Swift instance method.
+    PersonSwift * ps = [[PersonSwift alloc] init];
+    [ps fooPersonMessage:@"ViewController says 'Hi to Swift' "];
+    
 }
 
 - (void)didReceiveMemoryWarning {
